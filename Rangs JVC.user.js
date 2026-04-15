@@ -352,7 +352,9 @@ const rang = obtenirRang(totalPoints);
         wrapper.addEventListener("click", ouvrirPopupRangs);
     }
 
-    window.addEventListener("load", () => {
-        setTimeout(ajouterRangProfil, 0);
-    });
+if (document.readyState === "complete") {
+    setTimeout(ajouterRangProfil, 0);
+} else {
+    window.addEventListener("load", () => setTimeout(ajouterRangProfil, 0));
+}
 })();
